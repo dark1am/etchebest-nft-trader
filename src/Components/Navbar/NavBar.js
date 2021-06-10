@@ -1,12 +1,13 @@
 import React from "react";
-import "./NavBar.css";
+import "./Navbar.css";
+import Logo from "../../Static/nftrader-logo-white.svg";
 
-function NavBar() {
+function Navbar() {
   return (
-    <div>
+    <div className="nav">
       <nav className="navbar">
-        <img className="navbar__brand" src="" alt="" />
-        <ul className="navbar__buttonList">
+        <img className="navbar__brand" src={Logo} alt="" />
+        <ul>
           <li>
             <p>Market</p>
           </li>
@@ -17,7 +18,7 @@ function NavBar() {
             <p>Cart</p>
           </li>
           <li>
-            <p>Settings</p>
+            <p>Profile</p>
           </li>
         </ul>
       </nav>
@@ -25,4 +26,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default Navbar;
