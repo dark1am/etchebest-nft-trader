@@ -1,8 +1,8 @@
 import React from "react";
-import "./Navbar.css";
+import "./NavBar.css";
 import Logo from "../../Static/nftrader-logo-white.svg";
 
-function Navbar() {
+function NavBar() {
   return (
     <div className="nav">
       <nav className="navbar">
@@ -26,4 +26,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default NavBar;
