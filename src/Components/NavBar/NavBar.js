@@ -1,6 +1,7 @@
 import React from "react";
 import "./NavBar.css";
 import Logo from "../../Static/nftrader-logo-white.svg";
+import CartWidget from "../CartWidget/CartWidget";
 
 function NavBar() {
   return (
@@ -19,6 +20,9 @@ function NavBar() {
           </li>
           <li>
             <p>Profile</p>
+          </li>
+          <li>
+            <CartWidget />
           </li>
         </ul>
       </nav>
