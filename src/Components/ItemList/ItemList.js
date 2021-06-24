@@ -1,11 +1,11 @@
-import {React, useEffect} from 'react'
+import {React} from 'react'
 import './ItemList.css'
-import Item from '../Item/Item'
-import { render } from '@testing-library/react'
+/* import Item from '../Item/Item'
+import { render } from '@testing-library/react' */
 
-function ItemList({productos}) {
+function ItemList() {
     
-    useEffect(() => {
+    /* useEffect(() => {
         const desafioPromesa = new Promise((resolve,reject)=>{
             resolve('Promesa cumplida!')
             reject('Error inesperado!')
@@ -25,7 +25,7 @@ function ItemList({productos}) {
             }, 2000)
         )
 
-    }, [productos])
+    }, [productos]) */
     
 
     return (

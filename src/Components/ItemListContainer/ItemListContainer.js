@@ -1,7 +1,8 @@
 import {React} from "react";
 import "./ItemListContainer.css";
 /* import ItemCount from '../ItemCount/ItemCount.js' */
-import ItemList from '../ItemList/ItemList'
+/* import ItemList from '../ItemList/ItemList' */
+import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
 
 function ItemListContainer() {
 
@@ -21,7 +22,7 @@ function ItemListContainer() {
     stock:25
   } */
 
-  const falseBbdd = [
+/*   const falseBbdd = [
     {
         name: "BEEPLE-STRATO.9",
         pictureUrl: 'https://pbs.twimg.com/media/E3-a32yXIAQKyjb.jpg',
@@ -43,13 +44,14 @@ function ItemListContainer() {
         price:"U$D 150.000",
         stock:25
     }
-]
+] */
 
   return (
-    <div className="listContainer">
+    <div className="listContainer">{/* 
       <div className="listContainer_card">
       <ItemList productos={falseBbdd} />
-      </div>
+      </div> */}
+      <ItemDetailContainer />
     </div>
   );
 }

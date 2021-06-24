@@ -1,0 +1,19 @@
+.itemdetail{
+    border: 1px solid black;
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    padding: 2rem;
+}
+.itemdetail ul{
+    list-style: none;
+}
+.itemdetail ul li{
+    text-transform: uppercase;
+}
+.itemdetail ul li img{
+    height: 15rem;
+    object-fit: contain;
+}
