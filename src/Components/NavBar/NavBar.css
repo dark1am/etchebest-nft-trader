@@ -7,9 +7,6 @@
   box-sizing: border-box;
   margin: 0;
 }
-.nav {
-  display: flex;
-}
 .navbar {
   display: flex;
   justify-content: space-around;
@@ -20,9 +17,8 @@
 }
 .navbar__brand {
   height: 100%;
-  width: auto;
+  width: 100%;
   cursor: pointer;
-  padding: 1rem;
 }
 
 .navbar ul {
@@ -38,18 +34,71 @@
   padding: 1rem;
 }
 
-.navbar ul li p {
+.navbar .navbar__submenu{
+  display: none;
+  text-transform: uppercase;
+  color:white;
+  position: absolute;
+  top: 7%;
+  border: 1px solid white;
+  border-radius: 0.5rem;
+  background: rgb(42, 42, 42);
+}
+
+nav ul:hover > .navbar__submenu{
+  display: block;
+  cursor: pointer;
+}
+
+
+.navbar__submenu li{
+  display:flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.link{
   color: white;
   text-transform: uppercase;
   text-decoration: none;
   transition: 0.5s;
-  display: block;
+  display: flex;
 }
 
-.navbar ul li p:hover {
+.link:hover{
   cursor: pointer;
-  color: var(--color-primary);
+  color: var(--color-secondary);
 }
+
+.sublink{
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.3s;
+  display: flex;
+  justify-content: left;
+}
+
+.sublink p{
+  padding-left: 1rem;
+}
+
+.sublink:hover p{
+  color:var(--color-secondary);
+  transform: translateX(20%);
+  animation: left-to-right ease-out 0.5s forwards;
+}
+
+@keyframes left-to-right{
+  100%{
+    transform: translateX(0%);
+  }
+}
+
+.link-active{
+  color:var(--color-primary);
+}
+
 @media (max-width: 650px) {
   .navbar {
     flex-direction: column;

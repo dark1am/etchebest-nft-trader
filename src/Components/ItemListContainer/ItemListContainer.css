@@ -11,3 +11,17 @@
     width: 50%;
     justify-content: space-around;
 }
+
+.listContainer ul{
+    list-style: none;
+}
+
+.listContainer ul li{
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.listContainer img{
+    height:150px;
+}
