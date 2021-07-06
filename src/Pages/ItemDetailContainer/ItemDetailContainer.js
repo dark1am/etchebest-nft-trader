@@ -18,8 +18,6 @@ function ItemDetailContainer() {
     setItem(itemsPulled)
   }, [id])
 
-  console.log(item)
-
     return (
         <div className="itemDetail">
             <NavBar />

@@ -1,7 +1,8 @@
 import {React, useState, useEffect} from 'react'
+import {Link} from 'react-router-dom'
 import './ItemCount.css'
 
-function ItemCount({item, stock, initial, onAdd ,img}) {
+function ItemCount({stock, initial, handlerOnAdd,handlerButton}) {
 
     const [counter,setCounter] = useState(initial)
     const [decrementButtonState,setDecrementButtonState] = useState(false)
@@ -34,7 +35,7 @@ function ItemCount({item, stock, initial, onAdd ,img}) {
         } else {
             setOnAddButtonState(false)
         }
-    }, [onAdd, stock])
+    }, [stock])
 
     const incrementItemCounter = () => {
         let temp = Number(counter)
@@ -47,20 +48,24 @@ function ItemCount({item, stock, initial, onAdd ,img}) {
 
     return (
         <div className="itemcount">
-            <h2 className="itemcount__title">{item}</h2>
-            <hr />
-            <h5 className="itemcount__title">Available: ({stock}) </h5>
-            <img className="itemcount__img" src={img} alt="" />
-            <div className="itemcount__counter">
+            {handlerButton !== true &&(<div className="itemcount__counter">
                 <button onClick={decrementItemCounter} disabled={decrementButtonState}>-</button>
                 <span> {counter} </span>
                 <button onClick={incrementItemCounter} disabled={incrementButtonState}>+</button>
-            </div>
-            <button 
-                onClick={onAdd} 
+            </div>)}
+            {handlerButton !== true &&(<button 
+                onClick={()=> handlerOnAdd(counter)}
                 disabled={onAddButtonState} 
                 className="itemcount__add"
-            >Add to cart</button>
+                id="itemcount__add__notAdded"
+            >Add to cart</button>)}
+            { handlerButton &&(
+            <Link to='/cart'><button 
+                className="itemcount__add" 
+                id="itemcount__add__added"
+                >
+                Terminar mi compra
+            </button></Link>)}
         </div>
     )
 }

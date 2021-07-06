@@ -27,12 +27,12 @@
 }
 
 .itemcount{
-    border:1px solid black;
-    border-radius: 0.5rem;
+    /* border:1px solid black;
+    border-radius: 0.5rem; */
     width: 15rem;
     padding: 1rem;
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3);
-    background: white;
+    /* box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3);
+    background: white; */
 }
 .itemcount__counter{
     padding:0.5rem;
