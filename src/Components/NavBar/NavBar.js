@@ -42,9 +42,6 @@ function NavBar() {
             <NavLink activeClassName="link-active" className="link" to="/news"><p>News</p></NavLink>
           </li>
           <li>
-            <NavLink activeClassName="link-active" className="link" to="/coins"><p>Coins</p></NavLink>
-          </li>
-          <li>
             <NavLink activeClassName="link-active" className="link" to="/profile"><p>Profile</p></NavLink>
           </li>
           <li>

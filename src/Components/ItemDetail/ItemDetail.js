@@ -1,14 +1,14 @@
 import React from 'react'
 import './ItemDetail.css'
 
-function ItemDetail({name,description,price,pictureUrl}) {
+function ItemDetail({item}) {
     return (
         <div className="itemdetail">
             <ul>
-                <li><h2>Nombre: {name}</h2> </li>
-                <li><h2>Descripcion: {description}</h2> </li>
-                <li><h2>Precio: ${price}</h2> </li>
-                <li><img src={pictureUrl}  alt="" /> </li>
+                <li><h2>Nombre: {item.name}</h2> </li>
+                <li><h2>Descripcion: {item.description}</h2> </li>
+                <li><h2>Precio: ${item.price}</h2> </li>
+                <li><img src={item.pictureUrl}  alt="" /> </li>
             </ul>
         </div>
     )
