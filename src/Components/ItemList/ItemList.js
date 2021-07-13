@@ -4,13 +4,13 @@ import Item from '../Item/Item'
 
 function ItemList({items}) {
     return (
-        <Fragment>
+        <div className="listItem">
             {
                 items.map(item=>
                     <Item key={item.id} item={item} />
                 )
             }
-        </Fragment>
+        </div>
     )
 }
 

@@ -15,11 +15,15 @@
 }
 
 .item__img{
-    width: 100%;
+    width: 200px;
+    height: 200px;
     border: 1px solid black;
-    height: 50%;
-    object-fit: fill;
-    margin-top: 1rem;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.item__img img{
+    width: 100%;
 }
 
 .item__img{

@@ -1,17 +1,19 @@
-import {React,useState,useEffect} from 'react'
+import {React,useState,useEffect,useContext} from 'react'
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
+import {CartContext} from '../../context/cartContext'
 
 function ItemDetail({item}) {
 
-    const [onAddValue,setOnAddValue] = useState()
+    const {addItem} = useContext(CartContext) 
     const [turnOff,setTurnOff] = useState(false)
 
-    useEffect(() => {
+    const handlerOnAdd = (onAddValue)=>{
         if(onAddValue > 0){
+            addItem(item,onAddValue)
             setTurnOff(true)
         }
-    }, [onAddValue])
+    }
 
     return (
         <div className="itemdetail">
@@ -24,7 +26,7 @@ function ItemDetail({item}) {
                 <ItemCount 
                     initial="0" 
                     stock={item.stock} 
-                    handlerOnAdd={(handler)=>setOnAddValue(handler)} 
+                    handlerOnAdd={handlerOnAdd} 
                     handlerButton={turnOff}
                 />
             </ul>
