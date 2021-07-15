@@ -3,18 +3,25 @@ import {useParams} from 'react-router-dom'
 import ItemList from '../../Components/ItemList/ItemList'
 import "./ItemListContainer.css";
 import NavBar from '../../Components/NavBar/NavBar'
-import ITEMDATA from '../../data/items.json'
+import {dataBase} from '../../Firebase/firebase'
 
 function ItemListContainer() {
   const {categoryId} = useParams()
   const [items,setItems] = useState([])
 
   useEffect(() => {
-    const getItems = ()=>{
-      return categoryId ? ITEMDATA.filter(e=>e.category===categoryId) : ITEMDATA
+    const getItems= async () => {
+      try{
+        const {docs} = await dataBase.collection('items').get() 
+        const itemArr = docs.map(doc=>doc.data())
+        const itemsPulled = categoryId ? itemArr.filter(e=>e.category===categoryId) : itemArr
+        setItems(itemsPulled)
+      }
+      catch(error){
+        console.log(error)
+      }
     }
-    const itemsPulled = getItems()
-    setItems(itemsPulled)  
+    getItems()
   }, [categoryId])
 
   return (
