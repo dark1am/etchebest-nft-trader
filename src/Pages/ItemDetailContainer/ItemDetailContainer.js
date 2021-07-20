@@ -13,11 +13,17 @@ function ItemDetailContainer() {
   useEffect(() => {
     const getItem= async () => {
       try{
-        const {docs} = await dataBase.collection('items').get() 
-        const itemArr = docs.map(doc=>doc.data())
-        const itemPulled = itemArr.filter(e=>e.id===Number(id))
-        setItem(itemPulled[0])
-      }
+         const itemPulled = await dataBase.collection('items').doc(id)
+          itemPulled.get().then((doc) => {
+            if (doc.exists) {
+                setItem(doc.data())
+            } else {
+                console.log("El documento no existe!");
+            }
+            }).catch((error) => {
+                console.log("Error:", error);
+            });
+            }
       catch(error){
         console.log(error)
       }
