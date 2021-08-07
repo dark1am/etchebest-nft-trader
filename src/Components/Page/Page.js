@@ -4,7 +4,7 @@ import './Page.css'
 
 function Page({children}) {
     return (
-    <div>
+    <div className="page">
         <NavBar />
         <div className="wrapper">
         {children}

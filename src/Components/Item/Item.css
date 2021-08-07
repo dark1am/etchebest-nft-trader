@@ -31,13 +31,32 @@
 }
 
 .item{
-    border:1px solid black;
+    border: 1px solid rgb(73, 52, 71);
     border-radius: 0.5rem;
     width: 15rem;
     padding: 1rem;
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.3);
-    background: white;
+    box-shadow: 1px 1px 10px 1px rgba(138, 21, 132, 0.5);
+    background: rgb(40, 31, 49);
+    color:white;
+    animation: gradient ease-out 10s forwards;
+    animation-iteration-count: infinite;
 }
+
+@keyframes gradient{
+    0%{
+        box-shadow: 1px 1px 5px 1px rgb(255, 103, 117);
+    }
+    25%{
+        box-shadow: 1px 1px 5px 1px rgb(147, 101, 255);;
+    }
+    75%{
+        box-shadow: 1px 1px 5px 1px rgb(255, 237, 105);
+    }
+    100%{
+        box-shadow: 1px 1px 5px 1px rgb(255, 103, 117);
+    }
+}
+
 .item__counter{
     padding:0.5rem;
     border:1px solid black;
