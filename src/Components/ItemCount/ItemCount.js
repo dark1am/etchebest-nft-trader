@@ -53,19 +53,34 @@ function ItemCount({stock, initial, handlerOnAdd,handlerButton}) {
                 <span> {counter} </span>
                 <button onClick={incrementItemCounter} disabled={incrementButtonState}>+</button>
             </div>)}
-            {handlerButton !== true &&(<button 
+            {handlerButton !== true &&(<div>
+                <button 
                 onClick={()=> handlerOnAdd(counter)}
                 disabled={onAddButtonState} 
                 className="itemcount__add"
                 id="itemcount__add__notAdded"
-            >Add to cart</button>)}
+                >Add to cart</button>
+                <Link to='/'><button 
+                className="itemcount__add" 
+                id="itemcount__add__added"
+                >Continue exploring
+                </button></Link>
+            </div>)}
             { handlerButton &&(
+            <div>
             <Link to='/cart'><button 
                 className="itemcount__add" 
                 id="itemcount__add__added"
                 >
-                Terminar mi compra
-            </button></Link>)}
+                Finalize purchase
+            </button></Link>
+            <Link to='/'><button 
+                className="itemcount__add" 
+                id="itemcount__add__added"
+                >
+                Continue buying
+            </button></Link>
+            </div>)}
         </div>
     )
 }

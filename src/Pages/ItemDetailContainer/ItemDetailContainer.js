@@ -18,7 +18,7 @@ function ItemDetailContainer() {
             if (doc.exists) {
                 setItem(doc.data())
             } else {
-                console.log("El documento no existe!");
+                console.log("Document doesn't exists!");
             }
             }).catch((error) => {
                 console.log("Error:", error);

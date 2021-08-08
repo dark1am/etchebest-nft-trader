@@ -13,6 +13,7 @@
 .itemdetail__container{
     display: flex;
     width: 50%;
+    height: 40vh;
     padding: 1rem;
     border-radius: 10px;
     background: rgba(77, 64, 83, 0.2);

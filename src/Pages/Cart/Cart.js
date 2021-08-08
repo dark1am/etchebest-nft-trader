@@ -74,10 +74,10 @@ function Cart() {
                                 listaProductos.map(e=>
                                 <li className="cart__list__details">
                                     <div>
-                                    <strong>Nombre:</strong> {e.item.name} 
-                                    <strong>Cantidad: </strong> {e.quantity} 
+                                    <strong>Name:</strong> {e.item.name} 
+                                    <strong>Quantity: </strong> {e.quantity} 
                                     </div>
-                                    <button className="removecart" onClick={()=>removeItem(e.item.id)}>BORRAR</button>
+                                    <button className="removecart" onClick={()=>removeItem(e.item.id)}>REMOVE</button>
                                 </li>
                                 )
                             )
@@ -86,12 +86,12 @@ function Cart() {
                             listaProductos.length===0 && (
                                 <div className="cart__empty">
                                     <img src={Crypto} alt="" />
-                                    <h1>No hay items en el carrito!</h1>
-                                    <Link className="link__fix" to="/"><span>Ir al catalogo!</span></Link>
+                                    <h1>The cart is empty!</h1>
+                                    <Link className="link__fix" to="/"><span>Go to the catalogue!</span></Link>
                                 </div>
                             )
                         }
-                        <button className="emptycart" onClick={clear}>VACIAR EL CARRITO</button>
+                        <button className="emptycart" onClick={clear}>EMPTY CART</button>
                         </ul>
                         
                     </div> 
@@ -101,19 +101,19 @@ function Cart() {
                         <h1 className="formulario__title">Final: U$D {acumulador} </h1>
                        </div>
                         <form onSubmit={setUsuarios} className="formulario" action="">
-                            <label htmlFor="">Ingrese su 
-                                <span className="colorMarker"> nombre</span> 
+                            <label htmlFor="">Enter your 
+                                <span className="colorMarker"> name</span> 
                             </label><br />
                             <input onChange={(e)=>setName(e.target.value)} type="text" value={name} /><br />
-                            <label htmlFor="">Ingrese su 
+                            <label htmlFor="">Enter your 
                                 <span className="colorMarker"> email </span>
                             </label><br />
                             <input onChange={(e)=>setEmail(e.target.value)} type="email" value={email} /><br />
-                            <label htmlFor="">Ingrese su 
-                                <span className="colorMarker"> teléfono</span>
+                            <label htmlFor="">Enter your 
+                                <span className="colorMarker"> phone number</span>
                             </label><br />
                             <input onChange={(e)=>setPhone(e.target.value)} type="text" value={phone} /><br />
-                            <input type="submit" />
+                            <input type="submit" value="Send" />
                         </form>
                     </div>
                 </div>
