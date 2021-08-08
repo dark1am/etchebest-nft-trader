@@ -12,9 +12,11 @@
 }
 .itemdetail__container{
     display: flex;
-    background: rgb(48, 36, 61);
     width: 50%;
     padding: 1rem;
+    border-radius: 10px;
+    background: rgba(77, 64, 83, 0.2);
+    backdrop-filter: blur(50);
     box-shadow: 1px 1px 10px 1px;
 }
 .itemdetail ul{
@@ -57,4 +59,8 @@
 
 .counter_control{
     margin-top: 0.5rem;
+}
+
+.colorMarker{
+    color:var(--color-primary);
 }

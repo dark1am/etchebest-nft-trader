@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom'
 import Page from '../../Components/Page/Page'
 import {CartContext} from '../../context/cartContext'
 import './Cart.css'
+import Bitcoin from '../../Static/bitcoin.svg'
+import Crypto from '../../Static/cryptocurrencies.svg'
 
 function Cart() {
 
@@ -63,40 +65,59 @@ function Cart() {
 
     return (
         <Page>
-            <h1>Cart 🚀 </h1>
-            <ul>
-            {
-                listaProductos && (
-                    listaProductos.map(e=>
-                    <li>
-                        <strong>Nombre:</strong> {e.item.name} 
-                        <strong>Cantidad: </strong> {e.quantity} 
-                        <button onClick={()=>removeItem(e.item.id)}>BORRAR</button>
-                    </li>
-                    )
-                )
-            }
-            {
-                listaProductos.length===0 && (
-                    <>
-                        <h1>No hay items en el carrito!</h1>
-                        <Link to="/">Ir al catalogo!</Link>
-                    </>
-                )
-            }
-            </ul>
-            <h1>Precio final: U$D {acumulador} </h1>
-            <button onClick={clear}>VACIAR EL CARRITO</button>
-
-            <form onSubmit={setUsuarios} className="formulario" action="">
-                <label htmlFor="">Ingrese su nombre</label><br />
-                <input onChange={(e)=>setName(e.target.value)} type="text" value={name} /><br />
-                <label htmlFor="">Ingrese su email</label><br />
-                <input onChange={(e)=>setEmail(e.target.value)} type="email" value={email} /><br />
-                <label htmlFor="">Ingrese su teléfono</label><br />
-                <input onChange={(e)=>setPhone(e.target.value)} type="text" value={phone} /><br />
-                <input type="submit" />
-            </form>
+            <div className="cart">
+                <div className="cart__container">
+                    <div className="cart__list">
+                        <ul>
+                        {
+                            listaProductos && (
+                                listaProductos.map(e=>
+                                <li className="cart__list__details">
+                                    <div>
+                                    <strong>Nombre:</strong> {e.item.name} 
+                                    <strong>Cantidad: </strong> {e.quantity} 
+                                    </div>
+                                    <button className="removecart" onClick={()=>removeItem(e.item.id)}>BORRAR</button>
+                                </li>
+                                )
+                            )
+                        }
+                        {
+                            listaProductos.length===0 && (
+                                <div className="cart__empty">
+                                    <img src={Crypto} alt="" />
+                                    <h1>No hay items en el carrito!</h1>
+                                    <Link className="link__fix" to="/"><span>Ir al catalogo!</span></Link>
+                                </div>
+                            )
+                        }
+                        <button className="emptycart" onClick={clear}>VACIAR EL CARRITO</button>
+                        </ul>
+                        
+                    </div> 
+                   <div className="cart__form">
+                       <div className="cart__form__title">
+                        <img className="cart__form__icon" src={Bitcoin} alt="" />
+                        <h1 className="formulario__title">Final: U$D {acumulador} </h1>
+                       </div>
+                        <form onSubmit={setUsuarios} className="formulario" action="">
+                            <label htmlFor="">Ingrese su 
+                                <span className="colorMarker"> nombre</span> 
+                            </label><br />
+                            <input onChange={(e)=>setName(e.target.value)} type="text" value={name} /><br />
+                            <label htmlFor="">Ingrese su 
+                                <span className="colorMarker"> email </span>
+                            </label><br />
+                            <input onChange={(e)=>setEmail(e.target.value)} type="email" value={email} /><br />
+                            <label htmlFor="">Ingrese su 
+                                <span className="colorMarker"> teléfono</span>
+                            </label><br />
+                            <input onChange={(e)=>setPhone(e.target.value)} type="text" value={phone} /><br />
+                            <input type="submit" />
+                        </form>
+                    </div>
+                </div>
+            </div>
         </Page>
     )
 }

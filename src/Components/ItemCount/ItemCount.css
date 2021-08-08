@@ -44,8 +44,16 @@
     margin-top:0.4rem;
     width: 100%;
     color:white;
-    border-radius: 0.2rem;
+    border-radius: 5px;
+    border: 1px solid white;
     cursor: pointer;
-    background:var(--color-primary);
+    background:var(--color-secondary);
+    height: 25px;
+    transition: 0.5s;
+}
+
+.itemcount__add:hover{
+    background:var(--color-tertiary);
+    color:black;
 }
 

@@ -25,8 +25,18 @@ function ItemDetail({item}) {
                         {item.name}
                     </li>
                     <li>{item.description}</li>
-                    <li>U$DT {item.price}</li>
-                    <li>Stock: {item.stock}</li>
+                    <li>
+                        <span className="colorMarker">
+                            Price:
+                        </span> 
+                            U$DT {item.price}
+                    </li>
+                    <li>
+                        <span className="colorMarker">
+                            Stock:
+                        </span> 
+                        {item.stock}
+                    </li>
                     <div className="counter_control">
                         <ItemCount 
                             initial="0" 
