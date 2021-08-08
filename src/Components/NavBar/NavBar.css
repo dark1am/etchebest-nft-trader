@@ -58,6 +58,10 @@ nav ul:hover > .navbar__submenu{
   align-items: center;
 }
 
+.navbar__cart{
+  display: flex;
+}
+
 .link{
   color: white;
   text-transform: uppercase;

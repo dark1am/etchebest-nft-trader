@@ -2,6 +2,7 @@ import {React,useState,useEffect,useContext} from 'react'
 import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
 import {CartContext} from '../../context/cartContext'
+import Bitcoin from '../../Static/bitcoin.svg'
 
 function ItemDetail({item}) {
 
@@ -17,19 +18,28 @@ function ItemDetail({item}) {
 
     return (
         <div className="itemdetail">
-            <ul>
-                <li><h2>Nombre: {item.name}</h2> </li>
-                <li><h2>Descripcion: {item.description}</h2> </li>
-                <li><h2>Precio: ${item.price}</h2> </li>
-                <li><img src={item.pictureUrl}  alt="" /> </li>
-                <li><h2>Stock: {item.stock} </h2></li>
-                <ItemCount 
-                    initial="0" 
-                    stock={item.stock} 
-                    handlerOnAdd={handlerOnAdd} 
-                    handlerButton={turnOff}
-                />
-            </ul>
+            <div className="itemdetail__container">
+                <ul>
+                    <li className="itemdetail__capsule">
+                        <img src={Bitcoin} alt="" />
+                        {item.name}
+                    </li>
+                    <li>{item.description}</li>
+                    <li>U$DT {item.price}</li>
+                    <li>Stock: {item.stock}</li>
+                    <div className="counter_control">
+                        <ItemCount 
+                            initial="0" 
+                            stock={item.stock} 
+                            handlerOnAdd={handlerOnAdd} 
+                            handlerButton={turnOff}
+                        />
+                    </div>
+                </ul>
+                <div className="itemdetail__img">
+                    <img src={item.pictureUrl}  alt="" />
+                </div>
+            </div>
         </div>
     )
 }

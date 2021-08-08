@@ -13,14 +13,6 @@ function NavBar() {
       <nav className="navbar">
         <NavLink to="/"><img className="navbar__brand" src={Logo} alt=""/></NavLink>
         <ul>
-          <li className="opener">
-            <NavLink 
-              activeClassName="link-active"  
-              className="link" 
-              to="/market"><p>Market</p>
-            </NavLink>
-          </li>
-            <ul className="navbar__submenu">
                 <li><NavLink 
                   to='/categories/rares'
                   className="sublink"
@@ -37,16 +29,9 @@ function NavBar() {
                   to='/categories/trend'
                   className="sublink"
                   > <StarIcon></StarIcon><p>Trend</p> </NavLink></li>
-            </ul>
-          <li>
-            <NavLink activeClassName="link-active" className="link" to="/news"><p>News</p></NavLink>
-          </li>
-          <li>
-            <NavLink activeClassName="link-active" className="link" to="/profile"><p>Profile</p></NavLink>
-          </li>
-          <li>
-            <NavLink activeClassName="link-active" className="link" to="/cart"><CartWidget /></NavLink> 
-          </li>
+                <li className="navbar__cart">
+                  <NavLink activeClassName="link-active" className="link" to="/cart"><CartWidget /></NavLink> 
+                </li>
         </ul>
       </nav>
   );

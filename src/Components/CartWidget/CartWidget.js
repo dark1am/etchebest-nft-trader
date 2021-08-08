@@ -19,9 +19,9 @@ function CartWidget() {
   return (
     <div>
       {acumulador>0 && (
-      <div>
-        <h5>{acumulador}</h5>
+      <div className="cartwidget">
         <ShoppingCartIcon style={{ color: "white", cursor: "pointer" }}/>
+        <h5 className="cartwidget__counter">{acumulador}</h5>
       </div>
       )}
       
