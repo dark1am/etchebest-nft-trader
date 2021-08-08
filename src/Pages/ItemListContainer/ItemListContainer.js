@@ -1,4 +1,4 @@
-import {React,useEffect,useState} from "react";
+import React,{useEffect,useState} from "react";
 import {useParams} from 'react-router-dom'
 import ItemList from '../../Components/ItemList/ItemList'
 import "./ItemListContainer.css";
@@ -8,6 +8,7 @@ import {dataBase} from '../../Firebase/firebase'
 function ItemListContainer() {
   const {categoryId} = useParams()
   const [items,setItems] = useState([])
+  const [loading,setLoading] = useState(false);
 
   useEffect(() => {
     const getItems= async () => {
@@ -15,6 +16,7 @@ function ItemListContainer() {
         const {docs} = await dataBase.collection('items').get() 
         const itemArr = docs.map(doc=>doc.data())
         const itemsPulled = categoryId ? itemArr.filter(e=>e.category===categoryId) : itemArr
+        setLoading(true)
         setItems(itemsPulled)
       }
       catch(error){

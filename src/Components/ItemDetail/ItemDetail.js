@@ -3,11 +3,13 @@ import './ItemDetail.css'
 import ItemCount from '../ItemCount/ItemCount'
 import {CartContext} from '../../context/cartContext'
 import Bitcoin from '../../Static/bitcoin.svg'
+import Loader from '../../Components/Loader/Loader'
 
 function ItemDetail({item}) {
 
     const {addItem} = useContext(CartContext) 
     const [turnOff,setTurnOff] = useState(false)
+    const [loading,setLoading] = useState(false)
 
     const handlerOnAdd = (onAddValue)=>{
         if(onAddValue > 0){
@@ -16,9 +18,17 @@ function ItemDetail({item}) {
         }
     }
 
+    useEffect(() => {
+        if(item.name!==undefined){
+            setLoading(true)
+        }
+    }, [item])
+
     return (
         <div className="itemdetail">
-            <div className="itemdetail__container">
+            {
+                loading ? (
+                    <div className="itemdetail__container">
                 <ul>
                     <li className="itemdetail__capsule">
                         <img src={Bitcoin} alt="" />
@@ -50,6 +60,9 @@ function ItemDetail({item}) {
                     <img src={item.pictureUrl}  alt="" />
                 </div>
             </div>
+                ) : <Loader />
+            }
+            
         </div>
     )
 }
