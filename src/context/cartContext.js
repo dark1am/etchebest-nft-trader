@@ -46,6 +46,7 @@ export const CartProvider = ({children})=>{
     const addBuy = async (buy)=>{
         try{
             const data = await dataBase.collection("items-request").add(buy)
+            clear()
             console.log('Compra terminada')
         }
         catch(error){
