@@ -1,4 +1,5 @@
 import { createContext, useState } from 'react'
+import {dataBase} from '../../src/Firebase/firebase'
 
 export const CartContext = createContext()
 
@@ -42,7 +43,19 @@ export const CartProvider = ({children})=>{
         }
     }
 
-    return <CartContext.Provider value={{listaProductos,addItem,setListaProductos,clear,removeItem}}>
+    const addBuy = async (buy)=>{
+        try{
+            const data = await dataBase.collection("items-request").add(buy)
+            alert('Compra terminada')
+        }
+        catch(error){
+            console.log(`Ha sucedido un error durante el submit: ${error}`)
+            alert('Error en la compra, intente nuevamente')
+        }
+    }
+    
+
+    return <CartContext.Provider value={{listaProductos,addItem,setListaProductos,clear,removeItem,addBuy}}>
             {children}
             </CartContext.Provider>
 }

@@ -1,7 +1,6 @@
 import {React,useContext,useEffect,useState} from 'react'
 import firebase from 'firebase/app'
 import 'firebase/firestore'
-import {dataBase} from '../../Firebase/firebase'
 import { Link } from 'react-router-dom'
 import Page from '../../Components/Page/Page'
 import {CartContext} from '../../context/cartContext'
@@ -11,7 +10,7 @@ import Crypto from '../../Static/cryptocurrencies.svg'
 
 function Cart() {
 
-    const {listaProductos,removeItem,clear} = useContext(CartContext)
+    const {addBuy,listaProductos,clear,removeItem} = useContext(CartContext)
     const [acumulador,setAcumulador] = useState(0)
 
     const [name,setName] = useState('')
@@ -26,7 +25,7 @@ function Cart() {
         }
       }, [listaProductos])
 
-    const setUsuarios = async (event)=>{
+    const setUsuarios = (event)=>{
         event.preventDefault()
         if(name.length<3){
             //Filtro pendiente
@@ -45,22 +44,10 @@ function Cart() {
             "date":firebase.firestore.Timestamp.fromDate(new Date()),
             "total":acumulador
         }
-        console.log(buy)
-        try{
-            const data = await dataBase.collection("items-request").add(buy)
-            alert('Compra terminada')
-            setName('')
-            setEmail('')
-            setPhone('')
-            clear()
-        }
-        catch(error){
-            console.log(`Ha sucedido un error durante el submit: ${error}`)
-            alert('Error en la compra, intente nuevamente')
-            setName('')
-            setEmail('')
-            setPhone('')
-        }
+        addBuy(buy)
+        setName('')
+        setEmail('')
+        setPhone('')
     }
 
     return (
