@@ -46,11 +46,10 @@ export const CartProvider = ({children})=>{
     const addBuy = async (buy)=>{
         try{
             const data = await dataBase.collection("items-request").add(buy)
-            alert('Compra terminada')
+            console.log('Compra terminada')
         }
         catch(error){
             console.log(`Ha sucedido un error durante el submit: ${error}`)
-            alert('Error en la compra, intente nuevamente')
         }
     }
     

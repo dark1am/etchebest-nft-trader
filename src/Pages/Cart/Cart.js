@@ -7,6 +7,8 @@ import {CartContext} from '../../context/cartContext'
 import './Cart.css'
 import Bitcoin from '../../Static/bitcoin.svg'
 import Crypto from '../../Static/cryptocurrencies.svg'
+import Modal from '../../Components/Modal/Modal.js'
+import { render } from '@testing-library/react'
 
 function Cart() {
 
@@ -41,6 +43,7 @@ function Cart() {
             "total":acumulador
         }
         addBuy(buy)
+        render(<Modal/>)
         setName('')
         setEmail('')
         setPhone('')

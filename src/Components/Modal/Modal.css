@@ -1,0 +1,31 @@
+.modal-open{
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, .7);
+}
+
+.modal{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 300px;
+    height: 80px;
+    background: var(--color-primary);
+    color:white;
+    border-radius: 5px;
+}
+
+.modal-close{
+    display: none;
+}
+
+.modal-button{
+    position: relative;
+    top: 0;
+    right: 0;
+}
