@@ -104,22 +104,48 @@ nav ul:hover > .navbar__submenu{
   color:var(--color-primary);
 }
 
-@media (max-width: 650px) {
+.navbar__burgerMenu{
+  display: none;
+  cursor: pointer;
+  padding: 0.3rem;
+  border: 1px solid white;
+  border-radius: 5px;
+  color:white
+}
+
+.navbar__buttons{
+  transition: 1s;
+}
+
+.navbar__buttons__responsive{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top:80px;
+  width: 100%;
+  background: rgb(48, 36, 61);
+}
+
+@media (max-width: 750px) {
   .navbar {
-    flex-direction: column;
     height: auto;
+    padding: 1rem;
   }
   .navbar__brand {
-    margin-top: 1rem;
     width: 100%;
     height: 100%;
     justify-content: center;
   }
+  .navbar__buttons{
+    display:none;
+  }
+  .navbar__burgerMenu{
+    display: block;
+  }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 550px) {
   .navbar {
-    display: block;
     place-items: center;
     height: auto;
   }
@@ -127,4 +153,5 @@ nav ul:hover > .navbar__submenu{
     flex-direction: column;
     justify-content: center;
   }
+  
 }

@@ -16,7 +16,7 @@ function Cart() {
     const [name,setName] = useState('')
     const [phone,setPhone] = useState('')
     const [email,setEmail] = useState('')
-
+    
     useEffect(() => {
         if(listaProductos.length>0){
           setAcumulador(listaProductos.reduce((acum,e)=>acum+Number(e.item.price),0))
@@ -28,12 +28,8 @@ function Cart() {
     const setUsuarios = (event)=>{
         event.preventDefault()
         if(name.length<3){
-            //Filtro pendiente
-            console.log('Ingrese un nombre')
-        } else if(email.length<3){
-            //Filtro pendiente
-            console.log('Ingrese un mail valido')
-        }
+            console.log('Ingrese un nombre correcto')
+        } 
         const buy = {
             "buyer":{
                 "name":name,

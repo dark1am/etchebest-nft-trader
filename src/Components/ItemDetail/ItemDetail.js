@@ -29,37 +29,37 @@ function ItemDetail({item}) {
             {
                 loading ? (
                     <div className="itemdetail__container">
-                <ul>
-                    <li className="itemdetail__capsule">
-                        <img src={Bitcoin} alt="" />
-                        {item.name}
-                    </li>
-                    <li>{item.description}</li>
-                    <li>
-                        <span className="colorMarker">
-                            Price:
-                        </span> 
-                            U$DT {item.price}
-                    </li>
-                    <li>
-                        <span className="colorMarker">
-                            Stock:
-                        </span> 
-                        {item.stock}
-                    </li>
-                    <div className="counter_control">
-                        <ItemCount 
-                            initial="0" 
-                            stock={item.stock} 
-                            handlerOnAdd={handlerOnAdd} 
-                            handlerButton={turnOff}
-                        />
+                        <ul>
+                            <li className="itemdetail__capsule">
+                                <img src={Bitcoin} alt="" />
+                                {item.name}
+                            </li>
+                            <li>{item.description}</li>
+                            <li>
+                                <span className="colorMarker">
+                                    Price:
+                                </span> 
+                                    U$DT {item.price}
+                            </li>
+                            <li>
+                                <span className="colorMarker">
+                                    Stock:
+                                </span> 
+                                {item.stock}
+                            </li>
+                            <div className="counter_control">
+                                <ItemCount 
+                                    initial="0" 
+                                    stock={item.stock} 
+                                    handlerOnAdd={handlerOnAdd} 
+                                    handlerButton={turnOff}
+                                />
+                            </div>
+                        </ul>
+                        <div className="itemdetail__img">
+                            <img src={item.pictureUrl}  alt="" />
+                        </div>
                     </div>
-                </ul>
-                <div className="itemdetail__img">
-                    <img src={item.pictureUrl}  alt="" />
-                </div>
-            </div>
                 ) : <Loader />
             }
             

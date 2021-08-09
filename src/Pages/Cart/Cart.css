@@ -120,3 +120,17 @@
 .link__fix:hover{
     color:var(--color-tertiary)
 }
+
+@media(max-width:750px){
+    .cart__container{
+        height: 100%;
+        width: 100%;
+        display: block;
+    }
+    .cart__form{
+        border: none;
+    }
+    .formulario{
+        padding:0;
+    }
+}

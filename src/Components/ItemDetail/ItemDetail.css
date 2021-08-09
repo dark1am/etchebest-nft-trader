@@ -13,7 +13,7 @@
 .itemdetail__container{
     display: flex;
     width: 50%;
-    height: 40vh;
+    height: 100%;
     padding: 1rem;
     border-radius: 10px;
     background: rgba(77, 64, 83, 0.2);
@@ -64,4 +64,25 @@
 
 .colorMarker{
     color:var(--color-primary);
+}
+
+@media (max-width:1270px){
+    .itemdetail__container{
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@media (max-width:650px){
+    .itemdetail{
+        flex-direction: column;
+    }
+    .itemdetail__container{
+        display: flex;
+        flex-direction: column;
+    }
+    .itemdetail__img img{
+        width: 100%;
+        object-fit: contain;
+    }
 }

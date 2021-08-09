@@ -27,7 +27,7 @@
 }
 
 .itemcount{
-    width: 15rem;
+    width: 100%;
     padding: 1rem;
 }
 .itemcount__counter{
